@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                   padding:
                    const EdgeInsets.symmetric(horizontal: defaultPadding),
                    decoration: BoxDecoration(
-                     color: Colors.white,
+                     color: bgcolor,
                      borderRadius: const BorderRadius.only(
                        bottomLeft: Radius.circular(defaultPadding * 1.5),
                        bottomRight: Radius.circular(defaultPadding * 1.5),

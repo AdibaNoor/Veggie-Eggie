@@ -43,7 +43,7 @@ class ProductCard extends StatelessWidget {
                   .copyWith(fontWeight: FontWeight.w600),
             ),
             Text(
-              "Fruits",
+              "Veggies",
               style: Theme.of(context).textTheme.caption,
             ),
             Row(
