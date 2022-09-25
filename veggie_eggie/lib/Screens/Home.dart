@@ -22,8 +22,9 @@ class Home extends StatelessWidget {
         child: Container(
           child: Column(
             children: [
-              HomeHeader(),
-              Expanded(child: Container(
+               HomeHeader(),
+              Expanded(
+                child: Container(
                   padding:
                    const EdgeInsets.symmetric(horizontal: defaultPadding),
                    decoration: BoxDecoration(
@@ -47,8 +48,16 @@ class Home extends StatelessWidget {
                    ),
                  ),
                ),
-             SizedBox(
+             Container(
                 height: cartBarHeight,
+               child: GestureDetector(
+                 onVerticalDragUpdate: (details){
+                   print(details.primaryDelta);
+                 },
+                 child: Container(
+
+                 ),
+               ),
                ),
             ],
           ),

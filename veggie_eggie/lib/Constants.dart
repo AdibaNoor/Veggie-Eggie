@@ -8,7 +8,7 @@ const Color cardcolor = Color(0xFFF7F7F7);
 
 
 const defaultPadding =20.0;
-const cartBarHeight =100.0;
+const cartBarHeight =90.0;
 const headerHeight = 85.0;
 
 const panelTransition = Duration(milliseconds: 500);
