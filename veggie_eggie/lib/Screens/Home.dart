@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:veggie_eggie/Constants.dart';
 
-class Home extends StatefulWidget {
+import '../models/Product.dart';
+import 'ProductCard.dart';
+import 'header.dart';
+
+class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +17,44 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.transparent,
         title: Text('Veggie-Eggie',style: TextStyle(color: textcolor,fontSize: 30,fontWeight: FontWeight.bold),),
       ),
+      body: SafeArea(
+        bottom: false,
+        child: Container(
+          child: Column(
+            children: [
+              HomeHeader(),
+              Expanded(child: Container(
+                  padding:
+                   const EdgeInsets.symmetric(horizontal: defaultPadding),
+                   decoration: BoxDecoration(
+                     color: Colors.white,
+                     borderRadius: const BorderRadius.only(
+                       bottomLeft: Radius.circular(defaultPadding * 1.5),
+                       bottomRight: Radius.circular(defaultPadding * 1.5),
+                     ),),
+                    child: GridView.builder(
+                      itemCount: demo_product.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                       crossAxisCount: 2,
+                       childAspectRatio: 0.75,
+                       mainAxisSpacing: defaultPadding,
+                       crossAxisSpacing: defaultPadding,
+                     ),
+                     itemBuilder: (context, index) => ProductCard(
+                       product: demo_product[index],
+                       press: () {},
+                     ),
+                   ),
+                 ),
+               ),
+             SizedBox(
+                height: cartBarHeight,
+               ),
+            ],
+          ),
+        )
+      )
     );
   }
 }
+
